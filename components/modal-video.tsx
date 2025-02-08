@@ -1,19 +1,19 @@
-"use client";
+'use client'
 
-import { useState, useRef } from "react";
-import type { StaticImageData } from "next/image";
-import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
-import Image from "next/image";
-import SecondaryIllustration from "@/public/images/secondary-illustration.svg";
+import { useState, useRef } from 'react'
+import type { StaticImageData } from 'next/image'
+import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react'
+import Image from 'next/image'
+import SecondaryIllustration from '@/public/images/secondary-illustration.svg'
 
 interface ModalVideoProps {
-  thumb: StaticImageData;
-  thumbWidth: number;
-  thumbHeight: number;
-  thumbAlt: string;
-  video: string;
-  videoWidth: number;
-  videoHeight: number;
+  thumb: StaticImageData
+  thumbWidth: number
+  thumbHeight: number
+  thumbAlt: string
+  video: string
+  videoWidth: number
+  videoHeight: number
 }
 
 export default function ModalVideo({
@@ -25,8 +25,8 @@ export default function ModalVideo({
   videoWidth,
   videoHeight,
 }: ModalVideoProps) {
-  const [modalOpen, setModalOpen] = useState<boolean>(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const [modalOpen, setModalOpen] = useState<boolean>(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
 
   return (
     <div className="relative">
@@ -43,12 +43,12 @@ export default function ModalVideo({
           alt="Secondary illustration"
         />
       </div>
-
+      /*
       {/* Video thumbnail */}
       <button
         className="group relative flex items-center justify-center rounded-2xl focus:outline-hidden focus-visible:ring-3 focus-visible:ring-indigo-200"
         onClick={() => {
-          setModalOpen(true);
+          setModalOpen(true)
         }}
         aria-label="Watch the video"
         data-aos="fade-up"
@@ -102,7 +102,6 @@ export default function ModalVideo({
         </span>
       </button>
       {/* End: Video thumbnail */}
-
       <Dialog
         initialFocus={videoRef}
         open={modalOpen}
@@ -133,5 +132,5 @@ export default function ModalVideo({
         </div>
       </Dialog>
     </div>
-  );
+  )
 }
